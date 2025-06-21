@@ -12,12 +12,26 @@ const PORT = process.env.PORT || 3000;
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const allowedOrigins = [
+  'https://my-portfolio-8zro8pl4f-kakoi1s-projects.vercel.app',
+  'https://my-portfolio-weld-three-57.vercel.app',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-  origin: [
-    'https://my-portfolio-8zro8pl4f-kakoi1s-projects.vercel.app', // Original frontend
-    'https://my-portfolio-weld-three-57.vercel.app', // New frontend
-    'http://localhost:3000', // Local dev
-  ]
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
