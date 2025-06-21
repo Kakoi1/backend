@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "builds": [{"src": "server.js", "use": "@vercel/node"}],
   "routes": [
     {
       "src": "/api/.*",
-      "dest": "server.js",
       "methods": ["GET", "POST", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "https://my-portfolio-weld-three-57.vercel.app",
