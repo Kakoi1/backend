@@ -49,8 +49,14 @@ app.get('/api/download', async (req, res) => {
   try {
     const filePath = path.join(__dirname, 'pdf', 'resume.pdf');
     await fs.access(filePath);
+    
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    
     res.setHeader('Content-Disposition', 'attachment; filename="resume.pdf"');
     res.setHeader('Content-Type', 'application/pdf');
+    
     res.sendFile(filePath, (err) => {
       if (err) {
         console.error('Error sending file:', err.message, err.stack);
