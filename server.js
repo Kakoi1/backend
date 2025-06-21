@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 
 app.use(cors({
-  origin: 'https://my-portfolio-8zro8pl4f-kakoi1s-projects.vercel.app',
+  origin: 'https://my-portfolio-weld-three-57.vercel.app/',
   methods: ['GET', 'POST', 'OPTIONS'], // Allow POST and GET
   allowedHeaders: ['Content-Type'], // Allow headers used in your POST
 }));
