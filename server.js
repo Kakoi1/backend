@@ -12,7 +12,11 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://my-portfolio-8zro8pl4f-kakoi1s-projects.vercel.app',
+  methods: ['GET', 'POST', 'OPTIONS'], // Allow POST and GET
+  allowedHeaders: ['Content-Type'], // Allow headers used in your POST
+}));
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
