@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   'https://my-portfolio-8zro8pl4f-kakoi1s-projects.vercel.app',
-  'https://my-portfolio-weld-three-57.vercel.app',
+  'https://my-portfolio-weld-three-517.vercel.app',
   'http://localhost:3000'
 ];
 
