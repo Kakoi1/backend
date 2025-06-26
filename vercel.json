@@ -11,7 +11,7 @@
       "src": "/(.*)",
       "methods": ["GET", "POST", "OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": "https://my-portfolio-weld-three-517.vercel.app",
+        "Access-Control-Allow-Origin": "https://my-portfolio-weld-three-57.vercel.app",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true"
